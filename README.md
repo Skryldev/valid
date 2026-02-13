@@ -17,7 +17,7 @@
 
 ---
 
-### ✨ ValidX چه چیزی را حل می‌کند؟
+### ✨ پکیج ValidX چه چیزی را حل می‌کند؟
 
 ✅ کاملاً Type-Safe (بدون reflection در API سطح بالا)  
 ✅ Fluent API مدرن و خوانا  
@@ -77,7 +77,7 @@ ValidX بر پایه چند اصل کلیدی ساخته شده:
 ## 📦 نصب
 
 ```bash
-go get github.com/yourname/validx
+go get github.com/Skryldev/valid
 ```
 ---
 # ⚡ شروع سریع
@@ -213,9 +213,9 @@ func AllowedRoles() validx.Rule[[]string] {
 <div dir="rtl">
 
 ---
-## 4) Ruleهای آماده
+## چند Rule های آماده
 
-### Ruleهای رشته
+### 1) Rule های رشته
 
 - `RequiredString()`
 - `MinLen(min int)`
@@ -225,19 +225,19 @@ func AllowedRoles() validx.Rule[[]string] {
 - `Pattern(rx *regexp.Regexp)`
 - `OneOf(options ...string)`
 
-### Ruleهای عددی
+### 2) Rule های عددی
 
 - `Min[T Number](min T)`
 - `Max[T Number](max T)`
 - `Between[T Number](min, max T)`
 
-### Ruleهای اسلایس
+### 3) Rule های اسلایس
 
 - `MinItems[T any](min int)`
 - `MaxItems[T any](max int)`
 - `Unique[T comparable]()`
 
-### Ruleهای ترکیبی
+### 4) Rule های ترکیبی
 
 - `All[T any](rules ...Rule[T])`
 - `Any[T any](rules ...Rule[T])`
@@ -248,7 +248,7 @@ func AllowedRoles() validx.Rule[[]string] {
 
 ### `All`
 
-همه Ruleها باید پاس شوند. در اولین خطا متوقف می‌شود.
+##### همه Ruleها باید پاس شوند. در اولین خطا متوقف می‌شود.
 
 <div dir="ltr">
 
@@ -268,7 +268,7 @@ passwordRule := validx.All(
 
 ### `Any`
 
-اگر حداقل یک Rule پاس شود، کل Rule پاس است.
+##### اگر حداقل یک Rule پاس شود، کل Rule پاس است.
 
 <div dir="ltr">
 
@@ -283,7 +283,7 @@ usernameRule := validx.Any(
 
 ### `Optional`
 
-اگر مقدار zero-value باشد، validation رد نمی‌شود.
+##### اگر مقدار zero-value باشد، validation رد نمی‌شود.
 
 <div dir="ltr">
 
